@@ -1,16 +1,17 @@
-import React, { useState } from "react";
+import React, { lazy, Suspense, useState } from "react";
 import "./App.css";
-import Home from "./components/Home/Home";
-// import Navbar from "./components/Navbar/Navbar";
-import Quiz from "./components/Quiz/Quiz";
-import Result from "./components/Result/Result";
+import Loading from "./components/Loading/Loading";
+const Home = lazy(() => import("./components/Home/Home"));
+const Quiz = lazy(() => import("./components/Quiz/Quiz"));
 
 const App = () => {
   const [show, setshow] = useState(true);
-  // const [hidden, sethidden] = useState(true);
   return (
-    <div className="App">{show ? <Home setshow={setshow} /> : <Quiz />}</div>
+    <Suspense fallback={<Loading />}>
+      <div className="App">{show ? <Home setshow={setshow} /> : <Quiz />}</div>
+    </Suspense>
   );
 };
 
 export default App;
+

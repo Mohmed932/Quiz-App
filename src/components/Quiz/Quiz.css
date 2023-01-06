@@ -19,6 +19,7 @@ h3 {
 }
 .Quiz-quest {
   font-size: 22px;
+  text-align: center;
 }
 .Quiz-title span {
   color: #cccc00;
@@ -48,6 +49,9 @@ h3 {
 }
 @media (max-width: 575px) {
   .answer {
-    width: 95%;
+    width: 100%;
+  }
+  .answer-text {
+    width: 85%;
   }
 }

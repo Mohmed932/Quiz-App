@@ -3,7 +3,11 @@ import "./Result.css";
 import { Questions } from "../Questions";
 import { motion } from "framer-motion";
 
-const Result = ({ Correct, setshow }) => {
+const Result = ({ Correct, setshow, setCorrect }) => {
+  const handelClick = () => {
+    setshow(true);
+    setCorrect(0);
+  };
   return (
     <div className="Result">
       <h4>Congratulations you made it to the end!!!</h4>
@@ -13,7 +17,7 @@ const Result = ({ Correct, setshow }) => {
       <motion.button
         whileTap={{ scale: 0.9 }}
         whileHover={{ opacity: 0.4 }}
-        onClick={() => setshow(true)}
+        onClick={handelClick}
       >
         Play Again
       </motion.button>

@@ -59,7 +59,7 @@ const Quiz = () => {
           </div>
         </div>
       ) : (
-        <Result Correct={Correct} setshow={setshow} />
+        <Result Correct={Correct} setshow={setshow} setCorrect={setCorrect} />
       )}
     </Fragment>
   );
